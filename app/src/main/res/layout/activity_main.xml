@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/imagePengin"
+        android:onClick="onClick"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageUsagi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/penguin" />
+
+    <ImageButton
+        android:id="@+id/imageUsagi"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imagePengin"
+        app:layout_constraintEnd_toStartOf="@id/imageZou"
+        app:layout_constraintStart_toEndOf="@id/imagePengin"
+        app:layout_constraintTop_toTopOf="@+id/imagePengin"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/usagi" />
+
+    <ImageButton
+        android:id="@+id/imageZou"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageUsagi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageUsagi"
+        app:layout_constraintTop_toTopOf="@+id/imageUsagi"
+        app:srcCompat="@drawable/zou" />
+</androidx.constraintlayout.widget.ConstraintLayout>
