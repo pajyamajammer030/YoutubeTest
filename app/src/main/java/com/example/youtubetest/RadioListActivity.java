@@ -33,7 +33,10 @@ public class RadioListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_radio_list);
 
-        PlaylistItemReceiver receiver = new PlaylistItemReceiver();
+        Intent intent = getIntent();
+        String playlistId = intent.getStringExtra("playlistId");
+
+        PlaylistItemReceiver receiver = new PlaylistItemReceiver(playlistId);
         receiver.execute();
     }
 
@@ -51,15 +54,16 @@ public class RadioListActivity extends AppCompatActivity {
     }
 
     private class PlaylistItemReceiver extends AsyncTask<String, String, String> {
-        List<Map<String,String>> radioList = null;
-        public PlaylistItemReceiver() {
+        //PLAYLISTID
+        private final String PLAYLISTID;
 
+        public PlaylistItemReceiver(String PLAYLISTID) {
+            this.PLAYLISTID = PLAYLISTID;
         }
 
         @Override
         protected String doInBackground(String... string) {
             String APIKEY = "AIzaSyDEfFT1M0tKb8dgyDyT54KRMWG5Lb_Xh0Q";
-            String PLAYLISTID = "PLDCx5WcWNkqpmyT4EGdKe4xTZxiB9m_oU";
 
             //ニューラジオ再生リスト
             //PLDCx5WcWNkqpmyT4EGdKe4xTZxiB9m_oU
@@ -166,6 +170,7 @@ public class RadioListActivity extends AppCompatActivity {
             playlistItems[itemNum][1] = title;
         }
 
+        //InputStreamオブジェクトを文字列に変換する
         private String is2String(InputStream is) throws IOException {
             BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
             StringBuffer sb = new StringBuffer();

@@ -9,7 +9,7 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
 public class RadioPlayerActivity extends YouTubeBaseActivity {
-    private static final String API_KEY = "AIzaSyCrvNYF9gtJu2JG5JORytBA9EAZhTix5cA";
+    private final String API_KEY = "AIzaSyCrvNYF9gtJu2JG5JORytBA9EAZhTix5cA";
 
     YouTubePlayerView mYouTubePlayerView;
     YouTubePlayer.OnInitializedListener mOnInitializedListener;
