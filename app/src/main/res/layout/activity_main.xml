@@ -6,35 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    //ニューヨーク
     <ImageButton
-        android:id="@+id/imagePengin"
+        android:id="@+id/newyork"
         android:onClick="onClick"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageUsagi"
+        app:layout_constraintEnd_toStartOf="@+id/ozuwarudo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/penguin" />
 
+    //オズワルド
     <ImageButton
-        android:id="@+id/imageUsagi"
+        android:id="@+id/ozuwarudo"
+        android:onClick="onClick"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imagePengin"
-        app:layout_constraintEnd_toStartOf="@id/imageZou"
-        app:layout_constraintStart_toEndOf="@id/imagePengin"
-        app:layout_constraintTop_toTopOf="@+id/imagePengin"
+        app:layout_constraintBottom_toBottomOf="@+id/newyork"
+        app:layout_constraintEnd_toStartOf="@id/tutoraibu"
+        app:layout_constraintStart_toEndOf="@id/newyork"
+        app:layout_constraintTop_toTopOf="@+id/newyork"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/usagi" />
 
+    //ツートライブ
     <ImageButton
-        android:id="@+id/imageZou"
+        android:id="@+id/tutoraibu"
+        android:onClick="onClick"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageUsagi"
+        app:layout_constraintBottom_toBottomOf="@+id/ozuwarudo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageUsagi"
-        app:layout_constraintTop_toTopOf="@+id/imageUsagi"
+        app:layout_constraintStart_toEndOf="@+id/ozuwarudo"
+        app:layout_constraintTop_toTopOf="@+id/ozuwarudo"
         app:srcCompat="@drawable/zou" />
 </androidx.constraintlayout.widget.ConstraintLayout>
